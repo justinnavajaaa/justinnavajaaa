@@ -17,6 +17,7 @@ body{
     overflow:hidden;
     font-family:'Comic Sans MS', cursive;
 
+    /* BACKGROUND IMAGE */
     background: url("baby.jpeg") no-repeat center center;
     background-size: cover;
 
@@ -78,7 +79,7 @@ h1{
     cursor:pointer;
 }
 
-/* Floating emoji and text */
+/* Floating emoji + text */
 .pop{
     position:fixed;
     font-size:80px;
@@ -152,6 +153,15 @@ textarea{
     margin-top:15px;
     font-size:1.2em;
 }
+
+/* Hyperlink style */
+a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    margin-top:15px;
+    display:inline-block;
+}
 </style>
 </head>
 
@@ -175,6 +185,11 @@ textarea{
     <br>
     <button class="submit-btn" id="sendMessageBtn">Send 💖</button>
     <div class="love-message" id="displayMessage"></div>
+
+    <!-- HYPERLINK TEXT ONLY -->
+    <a href="https://justinnavajaaa.github.io/formybabykaikai/" target="_blank">
+        formybabykaikai
+    </a>
 </div>
 
 <!-- EmailJS -->
