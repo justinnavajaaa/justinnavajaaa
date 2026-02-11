@@ -12,9 +12,11 @@ body{
     height:100vh;
     overflow:hidden;
     font-family:'Comic Sans MS', cursive;
-    background: linear-gradient(-45deg,#ffb6d9,#ffc2e2,#ff9ad5,#ffd6ec);
-    background-size:400% 400%;
-    animation: gradientMove 12s ease infinite;
+
+    /* 💕 YOUR PICTURE BACKGROUND */
+    background: url("baby.jpeg") no-repeat center center;
+    background-size: cover;
+
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -22,10 +24,13 @@ body{
     position:relative;
 }
 
-@keyframes gradientMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+/* 🌙 Soft dark overlay for readability */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+    z-index:-1;
 }
 
 h1{
@@ -194,9 +199,6 @@ emailjs.init("Jsq8y9n9irXxy36f-");
 const noBtn=document.getElementById("noBtn");
 const yesBtn=document.getElementById("yesBtn");
 const bouquetScene=document.getElementById("bouquetScene");
-const sendMessageBtn = document.getElementById("sendMessageBtn");
-const loveInput = document.getElementById("loveInput");
-const displayMessage = document.getElementById("displayMessage");
 
 function moveNo(){
     const container=document.querySelector(".buttons");
@@ -206,25 +208,10 @@ function moveNo(){
     noBtn.style.top=Math.random()*maxY+"px";
 }
 
-function showEmojiFar(){
-    const emoji=document.createElement("div");
-    emoji.classList.add("emoji-pop");
-    emoji.innerHTML="😛";
-    emoji.style.left=(Math.random()*50 + 25) + "vw";
-    emoji.style.top=(Math.random()*50 + 25) + "vh";
-    document.body.appendChild(emoji);
-    setTimeout(()=>emoji.remove(),3000);
-}
-
-noBtn.addEventListener("mouseenter",function(){
-    moveNo();
-    showEmojiFar();
-});
-
+noBtn.addEventListener("mouseenter",moveNo);
 noBtn.addEventListener("touchstart",function(e){
     e.preventDefault();
     moveNo();
-    showEmojiFar();
 });
 
 moveNo();
