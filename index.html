@@ -225,7 +225,7 @@ sendMessageBtn.addEventListener("click", function(){
 function createHeart(){
     const heart=document.createElement("div");
     heart.classList.add("heart");
-    heart.innerHTML=["💖","💕","💘","💝"][Math.floor(Math.random()*4)];
+    heart.innerHTML=["💖","⭐","💘","⭐"][Math.floor(Math.random()*4)];
     heart.style.left=Math.random()*100+"vw";
     heart.style.fontSize=(Math.random()*25+20)+"px";
     heart.style.animationDuration=(Math.random()*6+6)+"s";
@@ -252,7 +252,7 @@ function startHeartRainStaggered(){
     for(let i=0; i<totalHearts; i++){
         setTimeout(()=>{
             const heart = document.createElement("div");
-            heart.innerHTML = ["💖","💕","💘","💝"][Math.floor(Math.random()*4)];
+            heart.innerHTML = ["💖","💕","⭐","⭐"][Math.floor(Math.random()*4)];
             heart.style.position = "fixed";
             heart.style.left = Math.random()*100 + "vw";
             heart.style.top = "-80px";
