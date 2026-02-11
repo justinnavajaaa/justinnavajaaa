@@ -17,7 +17,6 @@ body{
     overflow:hidden;
     font-family:'Comic Sans MS', cursive;
 
-    /* 💕 BACKGROUND IMAGE ADDED HERE */
     background: url("baby.jpeg") no-repeat center center;
     background-size: cover;
 
@@ -77,6 +76,28 @@ h1{
     color:#ff4da6;
     position:absolute;
     cursor:pointer;
+}
+
+/* Floating emoji and text */
+.pop{
+    position:fixed;
+    font-size:80px;
+    pointer-events:none;
+    animation:popAnim 0.4s ease;
+}
+
+.popText{
+    position:fixed;
+    font-size:30px;
+    pointer-events:none;
+    animation:popAnim 0.4s ease;
+    color:white;
+    text-shadow:0 0 10px #000;
+}
+
+@keyframes popAnim{
+    from{transform:scale(0);opacity:0;}
+    to{transform:scale(1);opacity:1;}
 }
 
 /* Bouquet Scene */
@@ -147,7 +168,7 @@ textarea{
     <div class="bouquet">💐🌹💖</div>
 
     <div style="font-size:1.6em; margin:20px;">
-        ARGHHHHHDKLSLASDHASDAS ILOVEEEYOUUUUUUSOOOOMUCHHHHBABYYYY 😩😩😩
+        ARGHHHHHH I LOVE YOU SO MUCH BABYYYY 💖
     </div>
 
     <textarea id="loveInput" placeholder="Leave a sweet message... 💌"></textarea>
@@ -160,7 +181,7 @@ textarea{
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
-emailjs.init("Jsq8y9n9irXxy36f-"); // YOUR PUBLIC KEY
+emailjs.init("Jsq8y9n9irXxy36f-"); // PUBLIC KEY
 
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
@@ -178,10 +199,35 @@ function moveNo(){
     noBtn.style.top = Math.random() * maxY + "px";
 }
 
-noBtn.addEventListener("mouseenter", moveNo);
+/* show emoji and text */
+function showPop(){
+    const emoji = document.createElement("div");
+    emoji.classList.add("pop");
+    emoji.textContent = "😜";
+    emoji.style.left = (Math.random()*60 + 20) + "vw";
+    emoji.style.top = (Math.random()*60 + 20) + "vh";
+    document.body.appendChild(emoji);
+
+    const text = document.createElement("div");
+    text.classList.add("popText");
+    text.textContent = "ble ble ble 😜";
+    text.style.left = (Math.random()*60 + 20) + "vw";
+    text.style.top = (Math.random()*60 + 20) + "vh";
+    document.body.appendChild(text);
+
+    setTimeout(()=> emoji.remove(), 1200);
+    setTimeout(()=> text.remove(), 1200);
+}
+
+noBtn.addEventListener("mouseenter", function(){
+    moveNo();
+    showPop();
+});
+
 noBtn.addEventListener("touchstart", function(e){
     e.preventDefault();
     moveNo();
+    showPop();
 });
 
 moveNo();
@@ -201,13 +247,13 @@ sendMessageBtn.addEventListener("click", function(){
         return;
     }
 
-    displayMessage.textContent = "Sending for Astin... 💖";
+    displayMessage.textContent = "Sending... 💖";
 
     emailjs.send("service_vi9ffxq", "template_xzyvp0c", {
         message: message
     })
     .then(function(response){
-        displayMessage.textContent = "Message sent successfully ayieeee 💕";
+        displayMessage.textContent = "Message sent successfully 💕";
         loveInput.value = "";
     })
     .catch(function(error){
