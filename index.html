@@ -3,17 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KAIKAIIIII, SIX SEVEN 676767 MWHEHEHE 💖</title>
+<title>For My Baby 💖</title>
 
 <style>
-*{margin:0; padding:0; box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
     height:100vh;
     overflow:hidden;
     font-family:'Comic Sans MS', cursive;
 
-    /* 💕 YOUR PICTURE BACKGROUND */
+    /* 💕 BACKGROUND IMAGE ADDED HERE */
     background: url("baby.jpeg") no-repeat center center;
     background-size: cover;
 
@@ -24,44 +28,48 @@ body{
     position:relative;
 }
 
-/* 🌙 Soft dark overlay for readability */
+/* Dark overlay */
 body::before{
     content:"";
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,0.4);
-    z-index:-1;
+    background:rgba(0,0,0,0.45);
+    z-index:0;
+    pointer-events:none;
 }
 
 h1{
-    margin-top:70px; 
-    font-size:3em; 
-    text-shadow:0 0 20px #fff,0 0 40px #ff66b2;
+    margin-top:70px;
+    font-size:3em;
+    text-align:center;
+    text-shadow:0 0 20px #fff, 0 0 40px #ff66b2;
+    z-index:1;
 }
 
 .buttons{
-    margin-top:60px; 
-    position:relative; 
-    width:400px; 
+    margin-top:80px;
+    position:relative;
+    width:400px;
     height:250px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1;
 }
 
-/* 🔥 BIG YES BUTTON */
 #yesBtn{
-    padding:40px 90px;
-    font-size:36px;
+    padding:45px 100px;
+    font-size:40px;
     border:none;
-    border-radius:60px;
+    border-radius:80px;
     cursor:pointer;
     background:linear-gradient(45deg,#ff4da6,#ff99cc);
     color:white;
-    box-shadow:0 0 40px #ff66b2, 0 0 80px #ff99cc;
-    transform:scale(1.2);
+    box-shadow:0 0 40px #ff66b2, 0 0 100px #ff99cc;
 }
 
-/* 💔 SMALL NO BUTTON */
 #noBtn{
-    padding:6px 12px;
+    padding:6px 14px;
     font-size:12px;
     border:none;
     border-radius:20px;
@@ -69,27 +77,6 @@ h1{
     color:#ff4da6;
     position:absolute;
     cursor:pointer;
-    transform:scale(0.8);
-}
-
-.emoji-pop{
-    position:fixed;
-    font-size:120px;
-    pointer-events:none;
-    animation:popAnim 0.3s ease;
-}
-
-@keyframes popAnim{
-    from{transform:scale(0);opacity:0;}
-    to{transform:scale(1);opacity:1;}
-}
-
-.heart{position:absolute; animation: floatUp linear infinite;}
-
-@keyframes floatUp{
-    0%{transform:translateY(100vh); opacity:0;}
-    50%{opacity:1;}
-    100%{transform:translateY(-10vh); opacity:0;}
 }
 
 /* Bouquet Scene */
@@ -103,77 +90,53 @@ h1{
     align-items:center;
     opacity:0;
     pointer-events:none;
-    transition:opacity 1.5s ease;
+    transition:opacity 1s ease;
     text-align:center;
     padding:20px;
+    z-index:10;
 }
 
 #bouquetScene.active{
-    opacity:1; 
-    pointer-events:all;
+    opacity:1;
+    pointer-events:auto;
 }
 
 .bouquet{
-    font-size:120px; 
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow{
-    from{ text-shadow:0 0 20px #fff,0 0 40px #ff99cc;}
-    to{ text-shadow:0 0 60px #fff,0 0 100px #ff1a75;}
-}
-
-.romantic-text{
-    font-size:1.6em; 
-    margin:20px 0; 
-    line-height:1.4em;
+    font-size:120px;
 }
 
 textarea{
-    width:300px; 
-    height:80px; 
-    border-radius:15px; 
+    width:300px;
+    height:80px;
+    border-radius:15px;
     border:none;
-    padding:10px; 
-    resize:none; 
+    padding:10px;
+    resize:none;
+    margin-top:20px;
     font-family:cursive;
 }
 
 .submit-btn{
-    margin-top:10px; 
-    padding:8px 20px; 
-    border:none; 
+    margin-top:10px;
+    padding:10px 25px;
+    border:none;
     border-radius:20px;
-    background:white; 
-    color:#ff4da6; 
-    cursor:pointer; 
+    background:white;
+    color:#ff4da6;
+    cursor:pointer;
     font-weight:bold;
 }
 
 .love-message{
-    margin-top:15px; 
-    font-size:1.2em; 
-    max-width:300px; 
-    word-wrap:break-word;
-}
-
-.sparkle{
-    position:absolute; 
-    font-size:18px; 
-    animation:sparkleMove 4s linear infinite;
-}
-
-@keyframes sparkleMove{
-    0%{transform:translateY(100vh);opacity:0;}
-    50%{opacity:1;}
-    100%{transform:translateY(-10vh);opacity:0;}
+    margin-top:15px;
+    font-size:1.2em;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Will You Be My Valentine?🥺🥺🥺</h1>
+<h1>Will You Be My Valentine? 🥺🥺🥺</h1>
 
 <div class="buttons">
     <button id="yesBtn">YES 💕</button>
@@ -182,48 +145,75 @@ textarea{
 
 <div id="bouquetScene">
     <div class="bouquet">💐🌹💖</div>
-    <div class="romantic-text">
-        ARGHHHHHHHHHHH, ILOVEYOUUUUUUSOOOMUCHHHHH, BABYYYYY, KAIKAIIIIIII.
+
+    <div style="font-size:1.6em; margin:20px;">
+        ARGHHHHHH I LOVE YOU SO MUCH BABYYYY 💖
     </div>
 
-    <textarea id="loveInput" placeholder="Leave a sweet message... 💌"></textarea><br>
+    <textarea id="loveInput" placeholder="Leave a sweet message... 💌"></textarea>
+    <br>
     <button class="submit-btn" id="sendMessageBtn">Send 💖</button>
     <div class="love-message" id="displayMessage"></div>
 </div>
 
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
-emailjs.init("Jsq8y9n9irXxy36f-");
+emailjs.init("Jsq8y9n9irXxy36f-"); // YOUR PUBLIC KEY
 
-const noBtn=document.getElementById("noBtn");
-const yesBtn=document.getElementById("yesBtn");
-const bouquetScene=document.getElementById("bouquetScene");
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const bouquetScene = document.getElementById("bouquetScene");
+const sendMessageBtn = document.getElementById("sendMessageBtn");
+const loveInput = document.getElementById("loveInput");
+const displayMessage = document.getElementById("displayMessage");
 
+/* Move NO button */
 function moveNo(){
-    const container=document.querySelector(".buttons");
-    const maxX=container.clientWidth-noBtn.offsetWidth;
-    const maxY=container.clientHeight-noBtn.offsetHeight;
-    noBtn.style.left=Math.random()*maxX+"px";
-    noBtn.style.top=Math.random()*maxY+"px";
+    const container = document.querySelector(".buttons");
+    const maxX = container.clientWidth - noBtn.offsetWidth;
+    const maxY = container.clientHeight - noBtn.offsetHeight;
+    noBtn.style.left = Math.random() * maxX + "px";
+    noBtn.style.top = Math.random() * maxY + "px";
 }
 
-noBtn.addEventListener("mouseenter",moveNo);
-noBtn.addEventListener("touchstart",function(e){
+noBtn.addEventListener("mouseenter", moveNo);
+noBtn.addEventListener("touchstart", function(e){
     e.preventDefault();
     moveNo();
 });
 
 moveNo();
 
-yesBtn.addEventListener("click", function() {
-    document.body.style.opacity = "0";
-    document.body.style.transition = "opacity 1s";
+/* YES click */
+yesBtn.addEventListener("click", function(){
+    bouquetScene.classList.add("active");
+});
 
-    setTimeout(() => {
-        bouquetScene.classList.add("active");
-        document.body.style.opacity = "1";
-    }, 1000);
+/* SEND MESSAGE */
+sendMessageBtn.addEventListener("click", function(){
+
+    const message = loveInput.value.trim();
+
+    if(!message){
+        displayMessage.textContent = "Please write something first 💌";
+        return;
+    }
+
+    displayMessage.textContent = "Sending... 💖";
+
+    emailjs.send("service_vi9ffxq", "template_xzyvp0c", {
+        message: message
+    })
+    .then(function(response){
+        displayMessage.textContent = "Message sent successfully 💕";
+        loveInput.value = "";
+    })
+    .catch(function(error){
+        displayMessage.textContent = "Failed to send 😢";
+        console.log(error);
+    });
 });
 </script>
 
